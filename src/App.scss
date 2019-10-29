@@ -1,4 +1,4 @@
-.App {
+.Splash {
   background-image: url("./space-background.gif");
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,7 +8,16 @@
 }
 
 * {
-  color: white
+  color: white;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  font-size: 50px;
+  font-family: "Press Start 2P", cursive;
 }
 
 .App-logo {
