@@ -1,15 +1,27 @@
 import React from "react";
 import logo from "./logo.svg";
+import Body from "./Body.js";
 import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <div className="button">
-        <button class="animated fadeIn delay-2s">Enter</button>
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      enterDiv: <div className="button"><button onClick={() => this.clickCheck()} className="animated fadeIn delay-2s">Enter</button></div>
+    }
+  }
+
+  clickCheck() {
+    this.setState({enterDiv: <Body>Loading...</Body>});
+  }
+  render() {
+    return (
+      <div className="App">
+        <div>{this.state.enterDiv}</div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
