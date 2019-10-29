@@ -26,7 +26,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="Splash">
-        <div className="title">Web3 StarLab</div>
+        <h1 className="title">Web3 StarLab</h1>
+        <div className="createdBy"> Robbie Kruszynski & Travis Toal</div>
         <div>{this.state.enterDiv}</div>
       </div>
     );
