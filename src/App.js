@@ -8,13 +8,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       enterDiv: (
-        <div className="button">
-          <button
-            onClick={() => this.clickCheck()}
-            className="animated fadeIn delay-2s"
-          >
-            Enter
-          </button>
+        <div className="">
+          <h1 className="title">Web3 StarLab</h1>
+          <div className="createdBy"> Robbie Kruszynski & Travis Toal</div>
+            <div className="button">
+            <button
+              onClick={() => this.clickCheck()}
+              className="animated fadeIn delay-2s"
+            >
+              Enter
+            </button>
+          </div>
         </div>
       )
     };
@@ -26,8 +30,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="Splash">
-        <h1 className="title">Web3 StarLab</h1>
-        <div className="createdBy"> Robbie Kruszynski & Travis Toal</div>
         <div>{this.state.enterDiv}</div>
       </div>
     );
