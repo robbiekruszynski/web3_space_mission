@@ -32,31 +32,47 @@ class Body extends React.Component {
     let output = answer ? "Correct" : "Wrong";
     this.setState({answer: output})
     this.answer(answer);
+    this.clickCheck();
+  }
+
+  changeRate(dir) {
+    this.clickCheck();
+    if (dir === "up") {
+      this.setState({rate: this.state.rate + 0.1});
+    } else {
+      this.setState({rate: this.state.rate - 0.1});
+    }
+    console.log(this.state.rate);
   }
 
   answer(choice) {
+    console.log(choice);
     if (choice) {
       let stateChange = {...this.state};
-      console.log(stateChange);
+      // console.log(stateChange);
       // stateChange.gas = this.state.gas + 10;
       // stateChange.q = 1;
+      this.setState({gas: this.state.gas + 10});
       this.setState({q: this.state.q + 1});
-      // console.log(this.state.q);
+      console.log(this.state.q);
     } else {
-      this.setState({gas: this.state.gas - 5})
+      this.setState({gas: this.state.gas - 5});
+      console.log(this.state.gas);
     }
+    this.clickCheck();
   }
 
   startGame() {
     setInterval(() => {
       // console.log('tick');
       this.setState({gas: this.state.gas - this.state.rate});
-      console.log(this.state.gas);
+      this.clickCheck();
+      // console.log(this.state.gas);
     }, 1000);
   }
 
   clickCheck() {
-    this.setState({enterDiv:<div className="Body"><Hud startGame={this.startGame} gas={this.state.gas} key={this.state.gas} /><div id="center"><Prompt prompts={this.state.prompts} q={this.state.q} /><Choices choices={this.state.choices} q={this.state.q} clickChoice={(key) => this.clickChoice(key)} /></div></div>});
+    this.setState({enterDiv:<div className="Body"><Hud startGame={this.startGame} gas={this.state.gas} changeRate={(dir) => this.changeRate(dir)} rate={this.state.rate} /><div id="center"><Prompt prompts={this.state.prompts} q={this.state.q} /><Choices choices={this.state.choices} q={this.state.q} clickChoice={(key) => this.clickChoice(key)} /></div></div>});
   }
 
   componentDidMount() {
