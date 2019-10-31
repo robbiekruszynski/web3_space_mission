@@ -11,36 +11,32 @@ class Hud extends React.Component {
   // }
   constructor(props) {
     super(props);
-    this.state = {
-      rate: 1
-    }
   }
 
   componentDidMount() {
     this.props.startGame();
   }
-  componentDidUpdate(gas) {
-    console.log(gas, this.props.gas);
-  }
+  // componentDidUpdate(prop) {
+  //   if (prop.gas !== this.props.gas) {
+  //
+  //   }
+  //   console.log(prop.gas, this.props.gas);
+  // }
 
-  changeRate(dir) {
+  onChangeRate(dir) {
     console.log('click');
-    if (dir === "up") {
-      this.setState({rate: this.state.rate + 0.1});
-    }else {
-      this.setState({rate: this.state.rate - 0.1});
-    }
+    this.props.changeRate(dir);
   }
 
   render() {
     return (
       <div id="hud">
         <Time />
-        <p id="gas" key={this.props.gas}>{this.props.gas}</p>
+        <p id="gas" key={this.props.gas}>{this.props.gas.toPrecision(3)}</p>
         <div id="rateDiv">
-          <p id="increase" onClick={() => this.changeRate("up")}>+</p>
-          <p>Gas: <span id="rate">{this.state.rate}</span></p>
-          <p id="decrease" onClick={() => this.changeRate("down")}>-</p>
+          <p id="increase" onClick={() => this.onChangeRate("up")}>+</p>
+          <p>Gas: <span id="rate">{this.props.rate.toPrecision(2)}</span></p>
+          <p id="decrease" onClick={() => this.onChangeRate("down")}>-</p>
         </div>
       </div>
     );
