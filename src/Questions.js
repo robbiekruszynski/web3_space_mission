@@ -128,7 +128,7 @@ export const questions = [
       "responses":[
          {
             "answer":"Bounties Network",
-            "correct":false
+            "correct":true
          },
          {
             "answer":"Gitcoin",

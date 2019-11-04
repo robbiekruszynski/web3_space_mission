@@ -28,10 +28,10 @@ class Hud extends React.Component {
     this.props.changeRate(dir);
   }
 
+  // <Time />
   render() {
     return (
       <div id="hud">
-        <Time />
         <p id="gas" key={this.props.gas}>{this.props.gas.toPrecision(3)}</p>
         <div id="rateDiv">
           <p id="increase" onClick={() => this.onChangeRate("up")}>+</p>
