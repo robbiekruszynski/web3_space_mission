@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import Body from "./Body.js";
+import Splash from "./Splash.js";
 import "./App.scss";
 
 class App extends React.Component {
@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   clickCheck() {
-    this.setState({ enterDiv: <Body>Loading...</Body> });
+    this.setState({ enterDiv: <Splash>Loading...</Splash> });
   }
   render() {
     return (

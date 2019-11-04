@@ -15,74 +15,65 @@ class Body extends React.Component {
       c.push(q.responses);
     });
     this.state = {
-      enterDiv: <div className="button"><h1>Story</h1><p>Background</p><button onClick={() => this.clickCheck()} className="animated fadeIn delay-2s">Continue</button></div>,
       prompts: p,
       choices: c,
       q: 0,
       answer: "",
       gas: 100,
-      rate: 1
+      rate: 1,
+      interval: ""
     }
     this.clickChoice = this.clickChoice.bind(this);
     this.startGame = this.startGame.bind(this);
     this.answer = this.answer.bind(this);
+    this.endGame = this.endGame.bind(this);
   }
 
   clickChoice(answer) {
-    let output = answer ? "Correct" : "Wrong";
-    this.setState({answer: output})
+    this.setState({answer: answer ? "Correct" : "Wrong"})
     this.answer(answer);
-    this.clickCheck();
   }
 
   changeRate(dir) {
-    this.clickCheck();
     if (dir === "up") {
       this.setState({rate: this.state.rate + 0.1});
     } else {
       this.setState({rate: this.state.rate - 0.1});
     }
-    console.log(this.state.rate);
   }
 
   answer(choice) {
-    console.log(choice);
     if (choice) {
-      let stateChange = {...this.state};
-      // console.log(stateChange);
-      // stateChange.gas = this.state.gas + 10;
-      // stateChange.q = 1;
-      this.setState({gas: this.state.gas + 10});
       this.setState({q: this.state.q + 1});
-      console.log(this.state.q);
+      this.setState({gas: this.state.gas + 10});
     } else {
       this.setState({gas: this.state.gas - 5});
-      console.log(this.state.gas);
     }
-    this.clickCheck();
+    console.log(this.state);
   }
 
   startGame() {
-    setInterval(() => {
-      // console.log('tick');
+    const timer = setInterval(() => {
       this.setState({gas: this.state.gas - this.state.rate});
-      this.clickCheck();
-      // console.log(this.state.gas);
     }, 1000);
+    this.setState({interval: timer});
   }
 
-  clickCheck() {
-    this.setState({enterDiv:<div className="Body"><Hud startGame={this.startGame} gas={this.state.gas} changeRate={(dir) => this.changeRate(dir)} rate={this.state.rate} /><div id="center"><Prompt prompts={this.state.prompts} q={this.state.q} /><Choices choices={this.state.choices} q={this.state.q} clickChoice={(key) => this.clickChoice(key)} /></div></div>});
-  }
-
-  componentDidMount() {
+  endGame() {
+    clearInterval(this.state.interval);
   }
 
   render() {
     return (
       <div>
-      <h1>{this.state.answer}</h1>
-      {this.state.enterDiv}
+        <h1>{this.state.answer}</h1>
+        <div className="Body">
+          <Hud startGame={this.startGame} gas={this.state.gas} changeRate={(dir) => this.changeRate(dir)} rate={this.state.rate} />
+          <div id="center">
+            <Prompt prompts={this.state.prompts} q={this.state.q} />
+            <Choices choices={this.state.choices} q={this.state.q} gas={this.state.gas} endGame={() => this.endGame()} clickChoice={(key) => this.clickChoice(key)} />
+          </div>
+        </div>
       </div>
     );
   }
