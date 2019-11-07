@@ -6,6 +6,11 @@
 ## Description (current)
 * Choose-Your-Own-Adventure game based in space, to educate users about blockchain.
 
+* Home page => story page => first room (left or right option)
+* each room will have plot text / question  / text (based off correct or incorrect)
+* to start a total of 5 quests => 5 rooms which result in a total score 
+* scoring over 80 => vicotry otherwise a fail 
+
 ## Planning
 
 # Development Notes
