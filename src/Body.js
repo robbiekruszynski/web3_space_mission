@@ -3,6 +3,7 @@ import Hud from "./Hud";
 import Prompt from "./Prompt";
 import Choices from "./Choices";
 import { questions } from "./Questions";
+import { plot } from "./Plot";
 
 class Body extends React.Component {
 
@@ -19,14 +20,15 @@ class Body extends React.Component {
       choices: c,
       q: 0,
       answer: "",
-      gas: 100,
+      time: 30,
       rate: 1,
-      interval: ""
+      interval: "",
+      questionsOn: false
     }
     this.clickChoice = this.clickChoice.bind(this);
-    this.startGame = this.startGame.bind(this);
+    this.questionStart = this.questionStart.bind(this);
     this.answer = this.answer.bind(this);
-    this.endGame = this.endGame.bind(this);
+    this.questionAnswered = this.questionAnswered.bind(this);
   }
 
   clickChoice(answer) {
@@ -44,22 +46,22 @@ class Body extends React.Component {
 
   answer(choice) {
     if (choice) {
+      this.setState({questionsOn: false});
       this.setState({q: this.state.q + 1});
-      this.setState({gas: this.state.gas + 10});
     } else {
-      this.setState({gas: this.state.gas - 5});
+      this.setState({time: this.state.time - 5});
     }
-    console.log(this.state);
+    // console.log(this.state);
   }
 
-  startGame() {
+  questionStart() {
     const timer = setInterval(() => {
-      this.setState({gas: this.state.gas - this.state.rate});
+      this.setState({time: this.state.time - 1});
     }, 1000);
     this.setState({interval: timer});
   }
 
-  endGame() {
+  questionAnswered() {
     clearInterval(this.state.interval);
   }
 
@@ -68,10 +70,10 @@ class Body extends React.Component {
       <div>
         <h1>{this.state.answer}</h1>
         <div className="Body">
-          <Hud startGame={this.startGame} gas={this.state.gas} changeRate={(dir) => this.changeRate(dir)} rate={this.state.rate} />
+          <Hud questionStart={this.questionStart} time={this.state.time} changeRate={(dir) => this.changeRate(dir)} rate={this.state.rate} />
           <div id="center">
-            <Prompt prompts={this.state.prompts} q={this.state.q} />
-            <Choices choices={this.state.choices} q={this.state.q} gas={this.state.gas} endGame={() => this.endGame()} clickChoice={(key) => this.clickChoice(key)} />
+            <Prompt prompts={this.state.prompts} q={this.state.q} showQuestion={this.state.questionsOn} />
+            <Choices choices={this.state.choices} q={this.state.q} time={this.state.time} questionAnswered={() => this.questionAnswered()} clickChoice={(key) => this.clickChoice(key)} showQuestion={this.state.questionsOn} />
           </div>
         </div>
       </div>

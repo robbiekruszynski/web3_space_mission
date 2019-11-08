@@ -5,7 +5,6 @@ class Prompt extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
     }
 
   }
@@ -21,7 +20,7 @@ class Prompt extends React.Component {
   render() {
     return (
     <div id="prompt">
-      <h1 onClick={() => this.clickHandle()}>{this.props.prompts[this.props.q]}</h1>
+      <h1 onClick={() => this.clickHandle()}>{this.props.showQuestion ? this.props.prompts[this.props.q] : this.props.plot[this.props.q]}</h1>
     </div>
     );
   }

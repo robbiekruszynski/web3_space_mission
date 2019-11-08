@@ -88,42 +88,6 @@ export const questions = [
       "seconds_to_respond":30
    },
    {
-      "question":"Whats the name of the thesis that says that in Web3, value acrues to protocols?",
-      "responses":[
-         {
-            "answer":"Protocol Accrual",
-            "correct":false
-         },
-         {
-            "answer":"Protocol Theory",
-            "correct":false
-         },
-         {
-            "answer":"Fat Protocol Thesis",
-            "correct":true
-         },
-         {
-            "answer":"Protocol Value Accrual",
-            "correct":false
-         }
-      ],
-      "seconds_to_respond":30
-   },
-   {
-      "question":"What is the name of the project that created the StandardBounties Protocol?",
-      "responses":[
-         {
-            "answer":"Bounties Network",
-            "correct":true
-         },
-         {
-            "answer":"Gitcoin",
-            "correct":false
-         }
-      ],
-      "seconds_to_respond":30
-   },
-   {
       "question":"What is the name of the project that created the StandardBounties Protocol?",
       "responses":[
          {

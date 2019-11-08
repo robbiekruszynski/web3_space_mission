@@ -13,13 +13,13 @@ class Choices extends React.Component {
     this.props.clickChoice(answer);
   }
   onGameEnd() {
-    this.props.endGame();
+    this.props.questionAnswered();
   }
   render() {
     let choices = [];
     if (this.props.choices[this.props.q]) {
       this.props.choices[this.props.q].forEach((choice, key) => {
-        choices.push(<div onClick={() => this.onClickChoice(key)} className="choice" key={key}><p>{choice.answer}</p></div>);
+        choices.push(<div onClick={() => this.onClickChoice(key)} className="choice" key={key}><p>{this.props.showQuestion ? choice.answer : this.props.turn}</p></div>);
       });
     } else {
       choices = <div><h1>End of Questions</h1><h2>Final Score: {this.props.gas}</h2></div>;
