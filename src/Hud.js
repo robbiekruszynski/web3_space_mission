@@ -14,7 +14,7 @@ class Hud extends React.Component {
   }
 
   componentDidMount() {
-    this.props.questionStart();
+    // this.props.questionStart();
   }
   // componentDidUpdate(prop) {
   //   if (prop.time !== this.props.time) {
