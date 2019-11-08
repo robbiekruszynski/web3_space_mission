@@ -2,6 +2,7 @@ import React from "react";
 import Hud from "./Hud";
 import Prompt from "./Prompt";
 import Choices from "./Choices";
+import GameOver from "./GameOver";
 import { questions } from "./Questions";
 import { plot } from "./Plot";
 
@@ -23,12 +24,16 @@ class Body extends React.Component {
       time: 30,
       rate: 1,
       interval: "",
-      questionsOn: false
+      plot: plot,
+      questionsOn: false,
+      score: 0,
+      gameOver: false
     }
     this.clickChoice = this.clickChoice.bind(this);
     this.questionStart = this.questionStart.bind(this);
     this.answer = this.answer.bind(this);
     this.questionAnswered = this.questionAnswered.bind(this);
+    this.turn = this.turn.bind(this);
   }
 
   clickChoice(answer) {
@@ -48,8 +53,9 @@ class Body extends React.Component {
     if (choice) {
       this.setState({questionsOn: false});
       this.setState({q: this.state.q + 1});
+      this.questionAnswered();
     } else {
-      this.setState({time: this.state.time - 5});
+      this.setState({time: this.state.time - 10});
     }
     // console.log(this.state);
   }
@@ -57,23 +63,38 @@ class Body extends React.Component {
   questionStart() {
     const timer = setInterval(() => {
       this.setState({time: this.state.time - 1});
+      this.checkLoss();
     }, 1000);
     this.setState({interval: timer});
   }
 
+  checkLoss() {
+    if (this.state.time <= 0) {
+      clearInterval(this.state.interval);
+      this.setState({gameOver: true});
+    }
+  }
+
   questionAnswered() {
+    this.setState({time: 30});
     clearInterval(this.state.interval);
+    this.setState({score: this.state.score + this.state.time})
+  }
+
+  turn() {
+    this.setState({questionsOn: true})
+    this.questionStart();
   }
 
   render() {
     return (
-      <div>
+      this.state.gameOver ? <GameOver score={this.state.score} /> :<div>
         <h1>{this.state.answer}</h1>
         <div className="Body">
           <Hud questionStart={this.questionStart} time={this.state.time} changeRate={(dir) => this.changeRate(dir)} rate={this.state.rate} />
           <div id="center">
-            <Prompt prompts={this.state.prompts} q={this.state.q} showQuestion={this.state.questionsOn} />
-            <Choices choices={this.state.choices} q={this.state.q} time={this.state.time} questionAnswered={() => this.questionAnswered()} clickChoice={(key) => this.clickChoice(key)} showQuestion={this.state.questionsOn} />
+            <Prompt prompts={this.state.prompts} q={this.state.q} plot={this.state.plot} showQuestion={this.state.questionsOn} />
+            <Choices score={this.state.score} choices={this.state.choices} q={this.state.q} plot={this.state.plot} time={this.state.time} questionAnswered={() => this.questionAnswered()} clickChoice={(key) => this.clickChoice(key)} showQuestion={this.state.questionsOn} turn={() => this.turn()} />
           </div>
         </div>
       </div>
