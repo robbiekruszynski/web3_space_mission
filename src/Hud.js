@@ -3,9 +3,9 @@ import Time from "./Time";
 
 class Hud extends React.Component {
   // static getDerivedStateFromProps(props,state) {
-  //   console.log(props.gas, state.gas);
-  //   if (props.gas !== state.gas) {
-  //     return {gas: props.gas };
+  //   console.log(props.time, state.time);
+  //   if (props.time !== state.time) {
+  //     return {time: props.time };
   //   }
   //   return null;
   // }
@@ -14,13 +14,13 @@ class Hud extends React.Component {
   }
 
   componentDidMount() {
-    this.props.startGame();
+    this.props.questionStart();
   }
   // componentDidUpdate(prop) {
-  //   if (prop.gas !== this.props.gas) {
+  //   if (prop.time !== this.props.time) {
   //
   //   }
-  //   console.log(prop.gas, this.props.gas);
+  //   console.log(prop.time, this.props.time);
   // }
 
   onChangeRate(dir) {
@@ -32,7 +32,7 @@ class Hud extends React.Component {
   render() {
     return (
       <div id="hud">
-        <p id="gas" key={this.props.gas}>{this.props.gas.toPrecision(3)}</p>
+        <p id="time" key={this.props.time}>{this.props.time.toPrecision(3)}</p>
         <div id="rateDiv">
           <p id="increase" onClick={() => this.onChangeRate("up")}>+</p>
           <p>Gas: <span id="rate">{this.props.rate.toPrecision(2)}</span></p>
