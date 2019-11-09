@@ -34,9 +34,6 @@ class Hud extends React.Component {
       <div id="hud">
         <p id="time" key={this.props.time}>{this.props.time.toPrecision(3)}</p>
         <div id="rateDiv">
-          <p id="increase" onClick={() => this.onChangeRate("up")}>+</p>
-          <p>Gas: <span id="rate">{this.props.rate.toPrecision(2)}</span></p>
-          <p id="decrease" onClick={() => this.onChangeRate("down")}>-</p>
         </div>
       </div>
     );
