@@ -1,6 +1,7 @@
 * {
   color: white;
   margin: 0;
+  // border: 1px solid green;
 }
 
 .Splash {
@@ -137,7 +138,7 @@
 .openBody {
   font-family: "Press Start 2P", cursive;
   background-color: black;
-  border: 1px solid red;
+  // border: 1px solid red;
   font-size: 12px;
   height: 100vh;
   width: 100vw;
@@ -227,6 +228,22 @@
   }
 }
 
+.Map {
+  // display: flex;
+  // justify-content: flex-end;
+  border: 5px solid orange;
+  // width: 100vw;
+  // height: 100vh;
+  margin-top: 30%;
+  z-index: 1;
+
+  img {
+    height: 200px;
+    width: auto;
+    // border: 5px solid red;
+  }
+}
+
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -265,7 +282,7 @@
   border-radius: 7px;
   cursor: pointer;
   p:hover {
-    border-bottom: 1px solid red;
+    // border-bottom: 1px solid red;
     font-weight: 900;
   }
 }
@@ -287,13 +304,23 @@
   align-content: center;
 }
 
-.Map {
-  display: flex;
-  border: 5px solid green;
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 
-  img {
-    height: 200px;
-    width: auto;
-    border: 5px solid red;
-  }
-}
+// .Map {
+//   display: flex;
+//   justify-content: flex-end;
+//   // border: 5px solid orange;
+//   width: 100vw;
+
+//   img {
+//     height: 200px;
+//     width: auto;
+//     // border: 5px solid red;
+//   }
+// }
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
