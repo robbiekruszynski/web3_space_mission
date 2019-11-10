@@ -161,22 +161,21 @@
   }
 }
 
-.Engine {
-  height: 100%;
-  width: 100%;
-  background-color: blue;
-}
-
 .Piloting {
   height: 100%;
   width: 100%;
-  background-image: url("/imgs/spaceHub.jpeg");
+  // background-image: url("/imgs/spaceHub.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .Engine {
   height: 100%;
   width: 100%;
   background-color: hotpink;
+  background-image: url("./spaceHub.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .Communications {
@@ -232,13 +231,13 @@
     color-stop(0%, #04009d),
     color-stop(100%, #06004d)
   );
-  background: -webkit-linear-gradient(top, #04009d 0%, #06004d 100%);
-  background: -o-linear-gradient(top, #04009d 0%, #06004d 100%);
-  background: -ms-linear-gradient(top, #04009d 0%, #06004d 100%);
-  background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
+  // background: -webkit-linear-gradient(top, #04009d 0%, #06004d 100%);
+  // background: -o-linear-gradient(top, #04009d 0%, #06004d 100%);
+  // background: -ms-linear-gradient(top, #04009d 0%, #06004d 100%);
+  // background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
   -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
+  // -moz-border-radius: 7px;
   border-radius: 7px;
   cursor: pointer;
   p:hover {
@@ -259,6 +258,17 @@
   border: 3px solid purple;
 }
 
+.Timer {
+  height: 100%;
+  // width: 100vw;
+  border: 1px solid lime;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  // margin-left: 50%;
+  // z-index: 2;
+}
 // .openBody {
 //   border: 1px solid blue;
 // }

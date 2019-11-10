@@ -128,8 +128,11 @@ class Body extends React.Component {
       <div className={this.state.plot[this.state.room].name.split(" ")[0]}>
         <h1>{this.state.answer}</h1>
         <div className="Body">
+          {" "}
           <div className="textBox">
-            <Hud questionStart={this.questionStart} time={this.state.time} />
+            <div className="Timer">
+              <Hud questionStart={this.questionStart} time={this.state.time} />
+            </div>
             <div id="center">
               <h1>{this.state.plot[this.state.room].name} Room</h1>
               <Prompt
