@@ -9,9 +9,9 @@ class App extends React.Component {
     this.state = {
       enterDiv: (
         <div className="">
-          <h1 className="title">Web3 StarLab</h1>
+          <h1 className="title">Web3 StarJumper</h1>
           <div className="createdBy"> Robbie Kruszynski & Travis Toal</div>
-            <div className="button">
+          <div className="button">
             <button
               onClick={() => this.clickCheck()}
               className="animated fadeIn delay-2s"
