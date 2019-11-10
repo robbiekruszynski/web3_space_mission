@@ -19,7 +19,11 @@ class Choices extends React.Component {
   }
 
   makeRepair() {
-    this.props.turn();
+    if (this.props.name == "Piloting") {
+      this.props.checkWin();
+    } else {
+      this.props.turn();
+    }
   }
 
   navigate(id) {
@@ -27,7 +31,8 @@ class Choices extends React.Component {
   }
   render() {
     let choices = [];
-    if (this.props.choices[this.props.q] ) {//&& this.props.plot[this.props.q]
+    // if (this.props.choices[this.props.q] ) {
+      //&& this.props.plot[this.props.q]
       if(this.props.showQuestion) {
         this.props.choices[this.props.q].forEach((choice, key) => {
           choices.push(<div onClick={() => this.onClickChoice(key)} className="choice" key={key}><p>{choice.answer}</p></div>);
@@ -39,9 +44,9 @@ class Choices extends React.Component {
 
         })
       }
-    } else {
-      choices = <div><h1>End of Questions</h1><h2>Final Score: {this.props.score}</h2></div>;
-    }
+    // } else {
+    //   choices = <div><h1>End of Questions</h1><h2>Final Score: {this.props.score}</h2></div>;
+    // }
     return (
       <div id="choices">
         {choices}

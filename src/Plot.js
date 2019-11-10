@@ -1,6 +1,7 @@
 export const plot = [
   {
-    text: ["Initial Room Text","Fixed Room Text"],
+    name: "Piloting",
+    text: ["Initial Piloting Room Text","Fixed Piloting Room Text (never visible, game ends when it's fixed)"],
     connections: [
       {
         1: "Navigation"
@@ -12,6 +13,7 @@ export const plot = [
     repair: false
   },
   {
+    name: "Navigation",
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -21,6 +23,7 @@ export const plot = [
     repair: false
   },
   {
+    name: "Engine",
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -33,15 +36,17 @@ export const plot = [
     repair: false
   },
   {
+    name: "Primary Shield",
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
-        1: "Communications"
+        4: "Communications"
       }
     ],
     repair: false
   },
   {
+    name: "Communications",
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -60,6 +65,7 @@ export const plot = [
     repair: false
   },
   {
+    name: "Secondary Shield",
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -69,6 +75,7 @@ export const plot = [
     repair: false
   },
   {
+    name: "Thruster",
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
