@@ -5,6 +5,7 @@
   background-position: center;
   height: 100vh;
   width: 100vw;
+  text-align: center;
 }
 
 * {
@@ -116,7 +117,6 @@
 }
 
 .lostScreen {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -200,23 +200,20 @@
   background-color: orange;
 }
 
-// .Thruster (
-//   height: 100%;
-//   width: 100%;
-//   background-color: yellow;
-// )
-
-// .{
-//   width: 100vw;
-//   height: 100vh;
-//   background-color: lime;
-// }
-
 .Body {
-  border: 5px solid red;
-  height: 100%;
-  width: 100%;
+  border: 5px solid rgba(0, 38, 255, 0.479);
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  // padding-top: 50px;
+  // padding-right: 300px;
+  // padding-bottom: 50px;
+  // padding-left: 50px;
+  text-align: center;
+}
+
+.Options {
+  border: 3px solid purple;
 }

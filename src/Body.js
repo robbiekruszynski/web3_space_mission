@@ -141,21 +141,23 @@ class Body extends React.Component {
               }
               showQuestion={this.state.questionsOn}
             />
-            <Choices
-              score={this.state.score}
-              name={this.state.plot[this.state.room].name}
-              checkWin={() => this.checkWin()}
-              choices={this.state.choices}
-              q={this.state.q}
-              navigate={id => this.navigate(id)}
-              pathways={this.state.plot[this.state.room].connections}
-              repair={this.state.plot[this.state.room].repair}
-              time={this.state.time}
-              questionAnswered={() => this.questionAnswered()}
-              clickChoice={key => this.clickChoice(key)}
-              showQuestion={this.state.questionsOn}
-              turn={id => this.turn(id)}
-            />
+            <div id="Options">
+              <Choices
+                score={this.state.score}
+                name={this.state.plot[this.state.room].name}
+                checkWin={() => this.checkWin()}
+                choices={this.state.choices}
+                q={this.state.q}
+                navigate={id => this.navigate(id)}
+                pathways={this.state.plot[this.state.room].connections}
+                repair={this.state.plot[this.state.room].repair}
+                time={this.state.time}
+                questionAnswered={() => this.questionAnswered()}
+                clickChoice={key => this.clickChoice(key)}
+                showQuestion={this.state.questionsOn}
+                turn={id => this.turn(id)}
+              />
+            </div>
           </div>
         </div>
       </div>
