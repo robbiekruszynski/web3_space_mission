@@ -12,6 +12,10 @@
   margin: 0;
 }
 
+.p .h1 .h2 .h3 .h4 {
+  font-family: "Press Start 2P", cursive;
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -124,4 +128,30 @@
   align-items: center;
   height: 10vh;
   font-size: 40px;
+}
+
+.openBody {
+  font-family: "Press Start 2P", cursive;
+  background-color: black;
+  border: 1px solid red;
+  // display: flex;
+  // justify-content: center;
+  // align-content: center;
+  // align-items: center;
+  font-size: 12px;
+  .button {
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 50px;
+    padding-right: 300px;
+    padding-bottom: 50px;
+    padding-left: 300px;
+    button {
+      border: 1px solid red;
+      margin-top: -300px;
+    }
+  }
 }
