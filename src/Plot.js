@@ -1,6 +1,5 @@
 export const plot = [
   {
-    id: 0,
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -13,7 +12,6 @@ export const plot = [
     repair: false
   },
   {
-    id: 1,
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -23,7 +21,6 @@ export const plot = [
     repair: false
   },
   {
-    id: 2,
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -36,7 +33,6 @@ export const plot = [
     repair: false
   },
   {
-    id: 3,
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -46,7 +42,6 @@ export const plot = [
     repair: false
   },
   {
-    id: 4,
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -65,7 +60,6 @@ export const plot = [
     repair: false
   },
   {
-    id: 5,
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {
@@ -75,7 +69,6 @@ export const plot = [
     repair: false
   },
   {
-    id: 6,
     text: ["Initial Room Text","Fixed Room Text"],
     connections: [
       {

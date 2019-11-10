@@ -20,6 +20,7 @@ class Body extends React.Component {
       prompts: p,
       choices: c,
       q: 0,
+      room: 0,
       answer: "",
       time: 30,
       rate: 1,
@@ -51,6 +52,9 @@ class Body extends React.Component {
 
   answer(choice) {
     if (choice) {
+      let tempPlot = [...this.state.plot];
+      tempPlot[this.state.room].repair = true;
+      this.setState({plot: tempPlot});
       this.setState({questionsOn: false});
       this.setState({q: this.state.q + 1});
       this.questionAnswered();
@@ -81,6 +85,10 @@ class Body extends React.Component {
     this.setState({score: this.state.score + this.state.time})
   }
 
+  navigate(id) {
+    this.setState({room: id});
+  }
+
   turn() {
     this.setState({questionsOn: true})
     this.questionStart();
@@ -91,10 +99,10 @@ class Body extends React.Component {
       this.state.gameOver ? <GameOver score={this.state.score} /> :<div>
         <h1>{this.state.answer}</h1>
         <div className="Body">
-          <Hud questionStart={this.questionStart} time={this.state.time} changeRate={(dir) => this.changeRate(dir)} rate={this.state.rate} />
+          <Hud questionStart={this.questionStart} time={this.state.time} />
           <div id="center">
-            <Prompt prompts={this.state.prompts} q={this.state.q} plot={this.state.plot} showQuestion={this.state.questionsOn} />
-            <Choices score={this.state.score} choices={this.state.choices} q={this.state.q} plot={this.state.plot} time={this.state.time} questionAnswered={() => this.questionAnswered()} clickChoice={(key) => this.clickChoice(key)} showQuestion={this.state.questionsOn} turn={() => this.turn()} />
+            <Prompt prompts={this.state.prompts} q={this.state.q} plotText={this.state.plot[this.state.room].text[this.state.plot[this.state.room].repair ? 1 : 0]} showQuestion={this.state.questionsOn} />
+            <Choices score={this.state.score} choices={this.state.choices} q={this.state.q} navigate={(id) => this.navigate(id)} pathways={this.state.plot[this.state.room].connections} repair={this.state.plot[this.state.room].repair} time={this.state.time} questionAnswered={() => this.questionAnswered()} clickChoice={(key) => this.clickChoice(key)} showQuestion={this.state.questionsOn} turn={(id) => this.turn(id)} />
           </div>
         </div>
       </div>
