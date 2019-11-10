@@ -1,15 +1,10 @@
 export const plot = [
-<<<<<<< HEAD
-  "Room 1 Plot this is a test to check render",
-  "Room 2 Plot",
-  "Room 3 Plot",
-  "Room 4 Plot",
-  "Room 5 Plot",
-  "Room 6 Plot"
-=======
   {
     name: "Piloting",
-    text: ["Initial Piloting Room Text","Fixed Piloting Room Text (never visible, game ends when it's fixed)"],
+    text: [
+      "Initial Piloting Room Text",
+      "Fixed Piloting Room Text (never visible, game ends when it's fixed)"
+    ],
     connections: [
       {
         1: "Navigation"
@@ -22,7 +17,7 @@ export const plot = [
   },
   {
     name: "Navigation",
-    text: ["Initial Room Text","Fixed Room Text"],
+    text: ["Initial Room Text", "Fixed Room Text"],
     connections: [
       {
         0: "Piloting"
@@ -32,7 +27,7 @@ export const plot = [
   },
   {
     name: "Engine",
-    text: ["Initial Room Text","Fixed Room Text"],
+    text: ["Initial Room Text", "Fixed Room Text"],
     connections: [
       {
         0: "Piloting"
@@ -45,7 +40,7 @@ export const plot = [
   },
   {
     name: "Primary Shield",
-    text: ["Initial Room Text","Fixed Room Text"],
+    text: ["Initial Room Text", "Fixed Room Text"],
     connections: [
       {
         4: "Communications"
@@ -55,7 +50,7 @@ export const plot = [
   },
   {
     name: "Communications",
-    text: ["Initial Room Text","Fixed Room Text"],
+    text: ["Initial Room Text", "Fixed Room Text"],
     connections: [
       {
         2: "Engine"
@@ -68,13 +63,13 @@ export const plot = [
       },
       {
         6: "Thruster"
-      },
+      }
     ],
     repair: false
   },
   {
     name: "Secondary Shield",
-    text: ["Initial Room Text","Fixed Room Text"],
+    text: ["Initial Room Text", "Fixed Room Text"],
     connections: [
       {
         4: "Communications"
@@ -84,13 +79,12 @@ export const plot = [
   },
   {
     name: "Thruster",
-    text: ["Initial Room Text","Fixed Room Text"],
+    text: ["Initial Room Text", "Fixed Room Text"],
     connections: [
       {
         4: "Communications"
       }
     ],
     repair: false
-  },
->>>>>>> master
+  }
 ];
