@@ -75,6 +75,7 @@
 }
 
 .button {
+  border: none;
   display: flex;
   justify-content: center;
 
@@ -93,10 +94,11 @@
     animation-iteration-count: infinite;
     animation-duration: 1s;
     animation-delay: 1s;
+    border: none;
   }
   button:hover {
-    background-color: white;
-    color: teal;
+    background-color: rgb(112, 200, 250);
+    color: white;
   }
 }
 
@@ -108,6 +110,8 @@
   color: white;
   display: flex;
   justify-content: center;
+  align-content: center;
+  align-items: center;
   margin-bottom: 250px;
 }
 
@@ -134,10 +138,6 @@
   font-family: "Press Start 2P", cursive;
   background-color: black;
   border: 1px solid red;
-  // display: flex;
-  // justify-content: center;
-  // align-content: center;
-  // align-items: center;
   font-size: 12px;
   .button {
     flex-direction: column;
@@ -150,7 +150,7 @@
     padding-bottom: 50px;
     padding-left: 300px;
     button {
-      border: 1px solid red;
+      border: none;
       margin-top: -300px;
     }
   }
