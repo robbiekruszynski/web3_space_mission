@@ -211,3 +211,12 @@
 //   height: 100vh;
 //   background-color: lime;
 // }
+
+.Body {
+  border: 5px solid red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
