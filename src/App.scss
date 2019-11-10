@@ -164,7 +164,6 @@
 .Piloting {
   height: 100%;
   width: 100%;
-  // background-image: url("/imgs/spaceHub.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -202,10 +201,28 @@
   background-color: orange;
 }
 
+.gameOver {
+  background-image: url("./spaceOne.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  
+    padding-top: 300px;
+  }
+  p {
+    cursor: pointer;
+    padding-top: 100px;
+  }
+}
+
 .Body {
-  height: 70vh;
+  height: 120%;
   width: 100vw;
-  // border: 5px solid red;
   display: flex;
   justify-content: center;
   justify-content: center;
@@ -231,13 +248,8 @@
     color-stop(0%, #04009d),
     color-stop(100%, #06004d)
   );
-  // background: -webkit-linear-gradient(top, #04009d 0%, #06004d 100%);
-  // background: -o-linear-gradient(top, #04009d 0%, #06004d 100%);
-  // background: -ms-linear-gradient(top, #04009d 0%, #06004d 100%);
-  // background: linear-gradient(to bottom, #04009d 0%, #06004d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
   -webkit-border-radius: 7px;
-  // -moz-border-radius: 7px;
   border-radius: 7px;
   cursor: pointer;
   p:hover {
@@ -269,6 +281,3 @@
   // margin-left: 50%;
   // z-index: 2;
 }
-// .openBody {
-//   border: 1px solid blue;
-// }
