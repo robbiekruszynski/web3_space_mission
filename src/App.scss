@@ -244,6 +244,7 @@
 .textBox {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   border: solid 1px #424542;
@@ -279,20 +280,18 @@
 }
 
 .Timer {
-  height: 100%;
-  // width: 100vw;
-  border: 1px solid lime;
+  height: auto;
+  // border: 1px solid lime;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   align-content: center;
-  // margin-left: 50%;
-  // z-index: 2;
 }
 
 .Map {
+  display: flex;
   border: 5px solid green;
-  margin-right: 0;
+
   img {
     height: 200px;
     width: auto;
