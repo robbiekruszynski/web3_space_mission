@@ -9,7 +9,7 @@ class GameOver extends React.Component {
     return (
       <div id="prompt">
         <h1 className="lostScreen">You Lose</h1>
-        <p>Score: {this.props.score}</p>
+        <p className="lostScore">Score: {this.props.score}</p>
       </div>
     );
   }
