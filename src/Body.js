@@ -125,7 +125,7 @@ class Body extends React.Component {
     return this.state.gameOver ? (
       <GameOver happyEnd={this.state.enginesReady} score={this.state.score} />
     ) : (
-      <div className="{this.state.plot[this.state.room].name}">
+      <div className={this.state.plot[this.state.room].name.split(" ")[0]}>
         <h1>{this.state.answer}</h1>
         <div className="Body">
           <Hud questionStart={this.questionStart} time={this.state.time} />

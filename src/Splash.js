@@ -29,7 +29,7 @@ class Splash extends React.Component {
   }
 
   clickCheck() {
-    this.setState({ enterDiv: <Body>Loading...</Body> });
+    this.setState({ enterDiv: <Body className="mainBody">Loading...</Body> });
   }
   render() {
     return <div className="openBody">{this.state.enterDiv}</div>;

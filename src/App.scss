@@ -139,6 +139,8 @@
   background-color: black;
   border: 1px solid red;
   font-size: 12px;
+  height: 100vh;
+  width: 100vw;
   .button {
     flex-direction: column;
     justify-content: space-around;
@@ -155,3 +157,43 @@
     }
   }
 }
+
+.Engine {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+.Piloting {
+  height: 100%;
+  width: 100%;
+  background-color: lime;
+}
+
+.Engine {
+  height: 100%;
+  width: 100%;
+  background-color: hotpink;
+}
+
+.Communications {
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+
+.Primary {
+  background-color: fusia;
+}
+
+// .Thruster (
+//   height: 100%;
+//   width: 100%;
+//   background-color: yellow;
+// )
+
+// .{
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: lime;
+// }

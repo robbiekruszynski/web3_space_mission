@@ -56,7 +56,7 @@ export const plot = [
         2: "Engine"
       },
       {
-        3: "Primary Shield"
+        3: "git "
       },
       {
         5: "Secondary Shield"
