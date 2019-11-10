@@ -178,12 +178,13 @@
   height: 100%;
   width: 100%;
   background-color: hotpink;
-  background-image: url("./spaceHub.jpeg");
+  background-image: url("./spaceEngine.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .Communications {
+  background-image: url("./spaceDeck.jpg");
   height: 100%;
   width: 100%;
   background-color: red;
@@ -192,7 +193,7 @@
 .Primary {
   height: 100%;
   width: 100%;
-  background-color: brown;
+  background-image: url("./spaceHall.jpg");
 }
 
 .Thruster {
