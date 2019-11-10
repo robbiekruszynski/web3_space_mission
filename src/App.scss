@@ -1,3 +1,8 @@
+* {
+  color: white;
+  margin: 0;
+}
+
 .Splash {
   background-image: url("./space-background.gif");
   background-size: cover;
@@ -6,11 +11,6 @@
   height: 100vh;
   width: 100vw;
   text-align: center;
-}
-
-* {
-  color: white;
-  margin: 0;
 }
 
 .p .h1 .h2 .h3 .h4 {
@@ -170,6 +170,7 @@
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: url("./pitImg.jpg");
 }
 
 .Engine {
@@ -211,6 +212,8 @@
   background-repeat: no-repeat;
 
   h1 {
+    padding-left: 20%;
+    padding-right: 20%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -223,10 +226,6 @@
     padding-top: 100px;
   }
 }
-
-// #Options {
-//   border: 1px solid red;
-// }
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
