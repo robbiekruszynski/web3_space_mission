@@ -99,7 +99,7 @@ class Body extends React.Component {
     } else {
       let tempPlot = [...this.state.plot];
       tempPlot[this.state.room].text[0] =
-        "Something's not quite right... There must be more damages throughout the ship.";
+        "Something's not quite right... Check the rest of the ship for damage.";
       this.setState({ plot: tempPlot });
     }
   }
@@ -127,7 +127,7 @@ class Body extends React.Component {
       <GameOver happyEnd={this.state.enginesReady} score={this.state.score} />
     ) : (
       <div className={this.state.plot[this.state.room].name.split(" ")[0]}>
-        <h1>{this.state.answer}</h1>
+        <h1 className="answer">{this.state.answer}</h1>
 
         <div className="Body">
           {" "}
