@@ -101,7 +101,6 @@ class Body extends React.Component {
 
   endGame() {
     this.setState({ gameOver: true });
-
   }
   checkWin() {
     if (this.state.enginesReady) {
@@ -140,10 +139,12 @@ class Body extends React.Component {
       <div className={this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"}>
 
         <div className="Body">
-          <h1>{this.state.plot[this.state.room].name + " Room"}</h1>
-          <h1>{this.state.plot[this.state.room].text[
-            this.state.plot[this.state.room].repair ? 1 : 0
-          ]}</h1>
+          <div className="plotText">
+            <h1>{this.state.plot[this.state.room].name + " Room"}</h1>
+            <h1>{this.state.plot[this.state.room].text[
+              this.state.plot[this.state.room].repair ? 1 : 0
+            ]}</h1>
+          </div>
           <div className="textBox">
             {this.state.questionsOn ? <div className="Timer">
               <Hud questionStart={this.questionStart} time={this.state.time} />
@@ -157,6 +158,11 @@ class Body extends React.Component {
               />
               <div className="Question">
               </div>
+            ) : (
+              <div></div>
+            )}
+            <div id="center">
+              <div className="Question"></div>
               <div id="Options">
                 <Choices
                   score={this.state.score}
