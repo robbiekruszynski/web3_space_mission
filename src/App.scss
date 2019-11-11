@@ -275,7 +275,7 @@
   height: 100%;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -328,7 +328,7 @@
   height: auto;
   // border: 1px solid lime;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   align-content: center;
 }
@@ -338,16 +338,15 @@
 /////////////////////////////////////////////////////////////////////////////
 
 .mapDiv {
-  display: flex;
-  justify-content: flex-end;
-  // border: 5px solid orange;
-  width: 100vw;
-
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 200px;
+  margin: 0;
   .mapImg {
     height: 200px;
     width: auto;
-    // border: 5px solid red;
-    // position: relative;
+    margin: 0;
   }
 }
 
