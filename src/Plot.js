@@ -2,8 +2,8 @@ export const plot = [
   {
     name: "Piloting",
     text: [
-      // "Initial Piloting Room Text",
-      // "Fixed Piloting Room Text (never visible, game ends when it's fixed)"
+      "Initial Piloting Room Text",
+      "Fixed Piloting Room Text (never visible, game ends when it's fixed)"
     ],
     connections: [
       {
@@ -17,7 +17,7 @@ export const plot = [
   },
   {
     name: "Navigation",
-    text: ["Initial Room Text", "Fixed Room Text"],
+    text: ["You are in the pilot room"],
     connections: [
       {
         0: "Piloting"
@@ -27,7 +27,7 @@ export const plot = [
   },
   {
     name: "Engine",
-    text: ["Initial Room Text", "Fixed Room Text"],
+    text: ["You are in the Engine room"],
     connections: [
       {
         0: "Piloting"
@@ -50,7 +50,7 @@ export const plot = [
   },
   {
     name: "Communications",
-    text: ["Initial Room Text", "Fixed Room Text"],
+    text: ["You are in the communication room"],
     connections: [
       {
         2: "Engine"
