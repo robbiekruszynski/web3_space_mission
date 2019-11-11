@@ -138,16 +138,18 @@ class Body extends React.Component {
             </div>
             <div id="center">
               <h1>{this.state.plot[this.state.room].name} Room</h1>
-              <Prompt
-                prompts={this.state.prompts}
-                q={this.state.q}
-                plotText={
-                  this.state.plot[this.state.room].text[
-                    this.state.plot[this.state.room].repair ? 1 : 0
-                  ]
-                }
-                showQuestion={this.state.questionsOn}
-              />
+              <div className="Question">
+                <Prompt
+                  prompts={this.state.prompts}
+                  q={this.state.q}
+                  plotText={
+                    this.state.plot[this.state.room].text[
+                      this.state.plot[this.state.room].repair ? 1 : 0
+                    ]
+                  }
+                  showQuestion={this.state.questionsOn}
+                />
+              </div>
               <div id="Options">
                 <Choices
                   score={this.state.score}
