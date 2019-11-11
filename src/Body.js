@@ -101,7 +101,6 @@ class Body extends React.Component {
 
   endGame() {
     this.setState({ gameOver: true });
-
   }
   checkWin() {
     if (this.state.enginesReady) {
@@ -136,28 +135,40 @@ class Body extends React.Component {
     return this.state.gameOver ? (
       <GameOver happyEnd={this.state.enginesReady} score={this.state.score} />
     ) : (
-      <div className={this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"}>
+      <div
+        className={
+          this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"
+        }
+      >
         <h1>{this.state.answer}</h1>
 
         <div className="Body">
-        <h1>{this.state.plot[this.state.room].name} Room</h1>
+          <h1 className="plotText">
+            {this.state.plot[this.state.room].name} Room
+          </h1>
           <Prompt
-          prompts={this.state.prompts}
-          q={this.state.q}
-          plotText={
-            this.state.plot[this.state.room].text[
-              this.state.plot[this.state.room].repair ? 1 : 0
-            ]
-          }
-          showQuestion={this.state.questionsOn}
+            prompts={this.state.prompts}
+            q={this.state.q}
+            plotText={
+              this.state.plot[this.state.room].text[
+                this.state.plot[this.state.room].repair ? 1 : 0
+              ]
+            }
+            showQuestion={this.state.questionsOn}
           />
           <div className="textBox">
-            {this.state.questionsOn ? <div className="Timer">
-              <Hud questionStart={this.questionStart} time={this.state.time} />
-            </div> : <div></div>}
-            <div id="center">
-              <div className="Question">
+            {this.state.questionsOn ? (
+              <div className="Timer">
+                <Hud
+                  questionStart={this.questionStart}
+                  time={this.state.time}
+                />
               </div>
+            ) : (
+              <div></div>
+            )}
+            <div id="center">
+              <div className="Question"></div>
               <div id="Options">
                 <Choices
                   score={this.state.score}

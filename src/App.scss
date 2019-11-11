@@ -207,7 +207,8 @@
 .Primary {
   height: 100%;
   width: 100%;
-  background-image: url("./spaceHall.jpg");
+  background-image: url("./surgRoom.jpg");
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -231,7 +232,7 @@
 .Navigation {
   height: 100%;
   width: 100%;
-  background-image: url("./surgRoom.jpg");
+  background-image: url("./spaceHall.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -277,6 +278,8 @@
   justify-content: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  // border: 5px solid yellow;
 }
 
 .textBox {
@@ -360,4 +363,15 @@
   text-align: center;
   // padding-top: 50%;
   border: 1px solid blue;
+}
+
+.plotText {
+  font-family: "Press Start 2P", cursive;
+
+  font-weight: bold;
+  // border: 1px solid red;
+}
+
+#prompt {
+  // border: 1px solid green;
 }
