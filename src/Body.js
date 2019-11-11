@@ -166,9 +166,6 @@ class Body extends React.Component {
                   turn={id => this.turn(id)}
                 />
               </div>
-              <div className="mapDiv">
-                <img className="mapImg" src={map} />
-              </div>
             </div>
           </div>
         </div>

@@ -30,6 +30,17 @@
   animation: type 4s steps(60, end);
 }
 
+.introStory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 70vw;
+  margin-top: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 @keyframes type {
   from {
     width: 0;
@@ -167,11 +178,12 @@
 /////////////////////////////////////////////////////////////////////////////
 
 .Piloting {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("./pitImg.jpg");
+  background-position: center;
 }
 
 .Engine {
@@ -180,6 +192,7 @@
   background-image: url("./spaceEngine.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .Communications {
@@ -188,6 +201,7 @@
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
+  background-position: center;
 }
 
 .Primary {
@@ -196,6 +210,7 @@
   background-image: url("./spaceHall.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .Thruster {
@@ -204,6 +219,7 @@
   background-image: url("./spaceHall2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .git {
@@ -218,12 +234,14 @@
   background-image: url("./surgRoom.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .gameOver {
   background-image: url("./spaceOne.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 
   h1 {
     padding-left: 20%;
@@ -246,7 +264,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 .Body {
-  height: 120%;
+  height: 100%;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -319,7 +337,7 @@
     height: 200px;
     width: auto;
     // border: 5px solid red;
-    position: relative;
+    // position: relative;
   }
 }
 
