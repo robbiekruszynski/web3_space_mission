@@ -2,8 +2,8 @@ export const plot = [
   {
     name: "Piloting",
     text: [
-      // "Initial Piloting Room Text",
-      // "Fixed Piloting Room Text (never visible, game ends when it's fixed)"
+      "Initial Piloting Room Text",
+      "Fixed Piloting Room Text (never visible, game ends when it's fixed)"
     ],
     connections: [
       {
@@ -56,7 +56,7 @@ export const plot = [
         2: "Engine"
       },
       {
-        3: "git "
+        3: "Primary Shield"
       },
       {
         5: "Secondary Shield"

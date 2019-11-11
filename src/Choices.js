@@ -38,7 +38,7 @@ class Choices extends React.Component {
           choices.push(<div onClick={() => this.onClickChoice(key)} className="choice" key={key}><p>{choice.answer}</p></div>);
         });
       } else{
-        this.props.repair ? choices.push(<div key={"broken"}>You've fixed all damages in this room.</div>) : choices.push(<div key={"repaired"} onClick={() => this.makeRepair()}><p>Attempt Repairs</p></div>);
+        this.props.repair ? this.props.name == "Piloting" ? choices.push(<div onClick={() => this.props.endGame()} key={"broken"}>START IGNITION</div>) : choices.push(<div key={"broken"}>You've fixed all damages in this room.</div>) : choices.push(<div key={"repaired"} onClick={() => this.makeRepair()}><p>Attempt Repairs</p></div>);
         this.props.pathways.forEach((choice, key) => {
           choices.push(<div className="turn" key={key}><p onClick={() => this.navigate(Object.keys(choice)[0])}>Walk to the {Object.values(choice)[0]} Room</p></div>)
 
