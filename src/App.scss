@@ -177,7 +177,6 @@
 .Engine {
   height: 100%;
   width: 100%;
-  background-color: hotpink;
   background-image: url("./spaceEngine.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -185,21 +184,26 @@
 
 .Communications {
   background-image: url("./spaceDeck.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  background-color: red;
 }
 
 .Primary {
   height: 100%;
   width: 100%;
   background-image: url("./spaceHall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .Thruster {
   height: 100%;
   width: 100%;
-  background-color: navy;
+  background-image: url("./spaceHall2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .git {
