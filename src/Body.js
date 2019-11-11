@@ -128,10 +128,9 @@ class Body extends React.Component {
     ) : (
       <div className={this.state.plot[this.state.room].name.split(" ")[0]}>
         <h1>{this.state.answer}</h1>
+
         <div className="Body">
-          <div className="Map">
-            <img src={map} />
-          </div>{" "}
+          {" "}
           <div className="textBox">
             <div className="Timer">
               <Hud questionStart={this.questionStart} time={this.state.time} />
@@ -167,6 +166,9 @@ class Body extends React.Component {
                   turn={id => this.turn(id)}
                 />
               </div>
+            </div>
+            <div className="mapDiv">
+              <img className="mapImg" src={map} />
             </div>
           </div>
         </div>
