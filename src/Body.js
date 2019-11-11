@@ -158,10 +158,6 @@ class Body extends React.Component {
               />
               <div className="Question">
               </div>
-            ) : (
-              <div></div>
-            )}
-            <div id="center">
               <div className="Question"></div>
               <div id="Options">
                 <Choices
@@ -185,7 +181,7 @@ class Body extends React.Component {
             </div>
           </div>
           <div className="mapDiv">
-          <img className="mapImg" src={map} />
+            <img className="mapImg" src={map} />
           </div>
         </div>
       </div>
