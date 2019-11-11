@@ -3,7 +3,7 @@ export const plot = [
     name: "Piloting",
     text: [
       "Initial Piloting Room Text",
-      "Fixed Piloting Room Text (never visible, game ends when it's fixed)"
+      "Fixed Piloting Room Text"
     ],
     connections: [
       {
@@ -17,7 +17,10 @@ export const plot = [
   },
   {
     name: "Navigation",
-    text: ["You are in the pilot room"],
+    text: [
+      "You are in the NAVIGATION room",
+      "Fixed Navigation room"
+    ],
     connections: [
       {
         0: "Piloting"
@@ -27,7 +30,10 @@ export const plot = [
   },
   {
     name: "Engine",
-    text: ["You are in the Engine room"],
+    text: [
+      "You are in the Engine room",
+      "Fixed Engine room text"
+    ],
     connections: [
       {
         0: "Piloting"
@@ -40,7 +46,10 @@ export const plot = [
   },
   {
     name: "Primary Shield",
-    text: ["Initial Room Text", "Fixed Room Text"],
+    text: [
+      "Initial Room Text",
+      "Fixed Room Text"
+    ],
     connections: [
       {
         4: "Communications"
@@ -50,7 +59,10 @@ export const plot = [
   },
   {
     name: "Communications",
-    text: ["You are in the communication room"],
+    text: [
+      "You are in the Communications room",
+      "Fixed Communications room"
+    ],
     connections: [
       {
         2: "Engine"
@@ -69,7 +81,10 @@ export const plot = [
   },
   {
     name: "Secondary Shield",
-    text: ["Initial Room Text", "Fixed Room Text"],
+    text: [
+      "Initial Secondary Room Text",
+      "Fixed Secondary room"
+    ],
     connections: [
       {
         4: "Communications"
@@ -79,7 +94,10 @@ export const plot = [
   },
   {
     name: "Thruster",
-    text: ["Initial Room Text", "Fixed Room Text"],
+    text: [
+      "Initial Thruster room Text",
+      "Fixed Thruster room"
+    ],
     connections: [
       {
         4: "Communications"
