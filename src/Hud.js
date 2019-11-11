@@ -8,7 +8,7 @@ class Hud extends React.Component {
   render() {
     return (
       <div id="hud">
-        <p id="time" key={this.props.time}>{this.props.time.toPrecision(3)}</p>
+        <p id="time" key={this.props.time}>{this.props.time.toPrecision(2)}</p>
         <div id="rateDiv">
         </div>
       </div>

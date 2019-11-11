@@ -39,6 +39,8 @@ class Body extends React.Component {
     this.questionAnswered = this.questionAnswered.bind(this);
     this.checkEngine = this.checkEngine.bind(this);
     this.turn = this.turn.bind(this);
+    this.fixRoom = this.fixRoom.bind(this);
+    this.endGame = this.endGame.bind(this);
   }
 
   clickChoice(answer) {
@@ -56,9 +58,7 @@ class Body extends React.Component {
 
   answer(choice) {
     if (choice) {
-      let tempPlot = [...this.state.plot];
-      tempPlot[this.state.room].repair = true;
-      this.setState({ plot: tempPlot });
+      this.fixRoom();
       this.setState({ questionsOn: false });
       this.setState({ q: this.state.q + 1 });
       this.checkEngine();
@@ -66,6 +66,12 @@ class Body extends React.Component {
     } else {
       this.setState({ time: this.state.time - 10 });
     }
+  }
+
+  fixRoom() {
+    let tempPlot = [...this.state.plot];
+    tempPlot[this.state.room].repair = true;
+    this.setState({ plot: tempPlot });
   }
 
   checkEngine() {
@@ -93,9 +99,13 @@ class Body extends React.Component {
     }
   }
 
+  endGame() {
+    this.setState({ gameOver: true });
+
+  }
   checkWin() {
     if (this.state.enginesReady) {
-      this.setState({ gameOver: true });
+      this.fixRoom();
     } else {
       let tempPlot = [...this.state.plot];
       tempPlot[this.state.room].text[0] =
@@ -126,28 +136,27 @@ class Body extends React.Component {
     return this.state.gameOver ? (
       <GameOver happyEnd={this.state.enginesReady} score={this.state.score} />
     ) : (
-      <div className={this.state.plot[this.state.room].name.split(" ")[0]}>
-        <h1 className="answer">{this.state.answer}</h1>
+      <div className={this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"}>
+        <h1>{this.state.answer}</h1>
 
         <div className="Body">
-          {" "}
+        <h1>{this.state.plot[this.state.room].name} Room</h1>
+          <Prompt
+          prompts={this.state.prompts}
+          q={this.state.q}
+          plotText={
+            this.state.plot[this.state.room].text[
+              this.state.plot[this.state.room].repair ? 1 : 0
+            ]
+          }
+          showQuestion={this.state.questionsOn}
+          />
           <div className="textBox">
-            <div className="Timer">
+            {this.state.questionsOn ? <div className="Timer">
               <Hud questionStart={this.questionStart} time={this.state.time} />
-            </div>
+            </div> : <div></div>}
             <div id="center">
-              <h1>{this.state.plot[this.state.room].name} Room</h1>
               <div className="Question">
-                <Prompt
-                  prompts={this.state.prompts}
-                  q={this.state.q}
-                  plotText={
-                    this.state.plot[this.state.room].text[
-                      this.state.plot[this.state.room].repair ? 1 : 0
-                    ]
-                  }
-                  showQuestion={this.state.questionsOn}
-                />
               </div>
               <div id="Options">
                 <Choices
@@ -164,6 +173,8 @@ class Body extends React.Component {
                   clickChoice={key => this.clickChoice(key)}
                   showQuestion={this.state.questionsOn}
                   turn={id => this.turn(id)}
+                  fixRoom={() => this.fixRoom()}
+                  endGame={() => this.endGame()}
                 />
               </div>
             </div>
