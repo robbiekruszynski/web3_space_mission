@@ -124,7 +124,7 @@ class Body extends React.Component {
 
   navigate(id) {
     this.setState({ room: id });
-    this.setState({answer: ""});
+    this.setState({ answer: "" });
   }
 
   turn() {
@@ -136,28 +136,41 @@ class Body extends React.Component {
     return this.state.gameOver ? (
       <GameOver happyEnd={this.state.enginesReady} score={this.state.score} />
     ) : (
-      <div className={this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"}>
-
+      <div
+        className={
+          this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"
+        }
+      >
         <div className="Body">
           <div className="plotText">
             <h1>{this.state.plot[this.state.room].name + " Room"}</h1>
-            <h1>{this.state.plot[this.state.room].text[
-              this.state.plot[this.state.room].repair ? 1 : 0
-            ]}</h1>
+            <h1>
+              {
+                this.state.plot[this.state.room].text[
+                  this.state.plot[this.state.room].repair ? 1 : 0
+                ]
+              }
+            </h1>
           </div>
           <div className="textBox">
-            {this.state.questionsOn ? <div className="Timer">
-              <Hud questionStart={this.questionStart} time={this.state.time} />
-              <h1>{this.state.answer}</h1>
-            </div> : <div></div>}
+            {this.state.questionsOn ? (
+              <div className="Timer">
+                <Hud
+                  questionStart={this.questionStart}
+                  time={this.state.time}
+                />
+                <h1>{this.state.answer}</h1>
+              </div>
+            ) : (
+              <div></div>
+            )}
             <div id="center">
               <Prompt
-              prompts={this.state.prompts}
-              q={this.state.q}
-              showQuestion={this.state.questionsOn}
+                prompts={this.state.prompts}
+                q={this.state.q}
+                showQuestion={this.state.questionsOn}
               />
-              <div className="Question">
-              </div>
+              <div className="Question"></div>
               <div className="Question"></div>
               <div id="Options">
                 <Choices
