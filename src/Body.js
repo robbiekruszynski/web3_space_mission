@@ -181,7 +181,9 @@ class Body extends React.Component {
             </div>
           </div>
           <div className="mapDiv">
-            <div id={"mapPosition" + this.state.room}></div>
+            {this.state.plot.map((element,index) => {
+              return <div class={this.state.room == index ? element.repair ? "current" : "currentBroken" : element.repair ? "fixed" : "broken"} id={"mapPosition" + index}></div>
+            })}
             <img className="mapImg" src={map} />
           </div>
         </div>
