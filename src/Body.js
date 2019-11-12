@@ -181,6 +181,7 @@ class Body extends React.Component {
             </div>
           </div>
           <div className="mapDiv">
+            <div id={"mapPosition" + this.state.room}></div>
             <img className="mapImg" src={map} />
           </div>
         </div>
