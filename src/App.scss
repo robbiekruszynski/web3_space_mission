@@ -434,12 +434,12 @@
 }
 
 .current {
-  background-color: purple;
+  background-color: green;
   @include border(border1,orange);
 }
 
 .currentBroken {
-  background-color: yellow;
+  background-color: red;
   @include border(border1,orange);
 }
 
