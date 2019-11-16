@@ -413,7 +413,7 @@
   width: 12px;
 }
 
-@mixin border($name,$color) {
+@mixin border($name, $color) {
   @keyframes #{$name} {
     0% {
       border: 1px solid yellow;
@@ -435,12 +435,12 @@
 
 .current {
   background-color: green;
-  @include border(border1,orange);
+  @include border(border1, orange);
 }
 
 .currentBroken {
   background-color: red;
-  @include border(border1,orange);
+  @include border(border1, orange);
 }
 
 .fixed {
@@ -465,8 +465,4 @@
 
   font-weight: bold;
   // border: 1px solid red;
-}
-
-#prompt {
-  // border: 1px solid green;
 }
