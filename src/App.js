@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import Splash from "./Splash.js";
 import "./App.scss";
 
@@ -10,7 +9,7 @@ class App extends React.Component {
       enterDiv: (
         <div className="">
           <h1 className="title">Web3 StarJumper</h1>
-          <div className="createdBy"> Robbie Kruszynski & Travis Toal</div>
+          <p className="createdBy"> Robbie Kruszynski & Travis Toal</p>
           <div className="button">
             <button
               onClick={() => this.clickCheck()}
