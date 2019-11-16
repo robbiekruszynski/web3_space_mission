@@ -11,7 +11,7 @@ function GameOver(props) {
       "Time runs out, the lights flicker one last time before you hear the ship power down...";
   }
   return (
-    <div className="gameOver">
+    <div className="gameOver" id={props.happyEnd ? "win" : "lose"}>
       <div id="prompt">
         <h1>{output}</h1>
         <p>Score: {props.score}</p>
