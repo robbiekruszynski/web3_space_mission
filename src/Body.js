@@ -44,8 +44,8 @@ class Body extends React.Component {
         p.push(q.question);
         c.push(q.responses);
       });
-    this.setState({prompts: p});
-    this.setState({choices: c});
+    this.setState({ prompts: p });
+    this.setState({ choices: c });
   }
 
   clickChoice(answer) {
@@ -123,7 +123,8 @@ class Body extends React.Component {
     clearInterval(this.state.interval);
     this.setState({ score: this.state.score + this.state.time });
     let tempPlot = [...this.state.plot];
-    tempPlot[0].text[0] = "You've spent countless hours in the cockpit of this ship, but the controls are completely dead. If you fix the rest of the ship, you could start the engines and return home.";
+    tempPlot[0].text[0] =
+      "You've spent countless hours in the cockpit of this ship, but the controls are completely dead. If you fix the rest of the ship, you could start the engines and return home.";
     this.setState({ plot: tempPlot });
   }
 
@@ -148,9 +149,7 @@ class Body extends React.Component {
       >
         <div className="Body">
           <div className="plotText">
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <h1>{this.state.plot[this.state.room].name + " Room"}</h1>
+            <h1 id="room">{this.state.plot[this.state.room].name + " Room"}</h1>
             <h1>
               {
                 this.state.plot[this.state.room].text[
@@ -158,17 +157,6 @@ class Body extends React.Component {
                 ]
               }
             </h1>
-=======
-=======
->>>>>>> master
-            <h1 id="room">{this.state.plot[this.state.room].name + " Room"}</h1>
-            <h1>{this.state.plot[this.state.room].text[
-              this.state.plot[this.state.room].repair ? 1 : 0
-            ]}</h1>
-<<<<<<< HEAD
->>>>>>> 23aba25f3efe423d9d95808c51cc585ad829c8fc
-=======
->>>>>>> master
           </div>
           <div className="textBox">
             {this.state.questionsOn ? (
@@ -212,11 +200,32 @@ class Body extends React.Component {
             </div>
           </div>
           <div className="mapDiv">
-            {this.state.plot.map((element,index) => {
-              return <div className={this.state.room === index ? element.repair ? "current" : "currentBroken" : element.repair ? "fixed" : "broken"} id={"mapPosition" + index} key={index}></div>
+            {this.state.plot.map((element, index) => {
+              return (
+                <div
+                  className={
+                    this.state.room === index
+                      ? element.repair
+                        ? "current"
+                        : "currentBroken"
+                      : element.repair
+                      ? "fixed"
+                      : "broken"
+                  }
+                  id={"mapPosition" + index}
+                  key={index}
+                ></div>
+              );
             })}
-            <img className="mapImg" src={map} alt={"Map of the ship, indicating that you are in the "
-          + this.state.plot[this.state.room].name + " Room."} />
+            <img
+              className="mapImg"
+              src={map}
+              alt={
+                "Map of the ship, indicating that you are in the " +
+                this.state.plot[this.state.room].name +
+                " Room."
+              }
+            />
           </div>
         </div>
       </div>
