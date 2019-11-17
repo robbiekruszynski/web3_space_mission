@@ -149,6 +149,7 @@ class Body extends React.Component {
         <div className="Body">
           <div className="plotText">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <h1>{this.state.plot[this.state.room].name + " Room"}</h1>
             <h1>
               {
@@ -158,11 +159,16 @@ class Body extends React.Component {
               }
             </h1>
 =======
+=======
+>>>>>>> master
             <h1 id="room">{this.state.plot[this.state.room].name + " Room"}</h1>
             <h1>{this.state.plot[this.state.room].text[
               this.state.plot[this.state.room].repair ? 1 : 0
             ]}</h1>
+<<<<<<< HEAD
 >>>>>>> 23aba25f3efe423d9d95808c51cc585ad829c8fc
+=======
+>>>>>>> master
           </div>
           <div className="textBox">
             {this.state.questionsOn ? (
