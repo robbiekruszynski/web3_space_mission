@@ -22,9 +22,9 @@ function Choices(props) {
           choices.push(<div onClick={() => onClickChoice(key)} className="choice" key={key}><p>{choice.answer}</p></div>);
         });
       } else{
-        props.repair ? props.name === "Piloting" ? choices.push(<div onClick={() => props.endGame()} key={"broken"}>START IGNITION</div>) : choices.push(<div key={"broken"}>You've fixed all damages in this room.</div>) : choices.push(<div key={"repaired"} onClick={() => makeRepair()}><p>Attempt Repairs</p></div>);
+        props.repair ? props.name === "Piloting" ? choices.push(<p onClick={() => props.endGame()} key={"broken"}>START IGNITION</p>) : choices.push(<div key={"broken"}>You've fixed all damages in this room.</div>) : choices.push(<div key={"repaired"} onClick={() => makeRepair()}><p>Attempt Repairs</p></div>);
         props.pathways.forEach((choice, key) => {
-          choices.push(<div className="turn" key={key}><p onClick={() => props.navigate(Object.keys(choice)[0])}>Walk to the {Object.values(choice)[0]} Room</p></div>)
+          choices.push(<div className="turn" key={key}><p onClick={() => props.navigate(parseInt(Object.keys(choice)[0]))}>Walk to the {Object.values(choice)[0]} Room</p></div>)
 
         })
       }
