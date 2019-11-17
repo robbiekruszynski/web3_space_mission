@@ -123,7 +123,7 @@ class Body extends React.Component {
     clearInterval(this.state.interval);
     this.setState({ score: this.state.score + this.state.time });
     let tempPlot = [...this.state.plot];
-    tempPlot[0].text[0] = "Initial Piloting Room Text.";
+    tempPlot[0].text[0] = "You've spent countless hours in the cockpit of this ship, but the controls are completely dead. If you fix the rest of the ship, you could start the engines and return home.";
     this.setState({ plot: tempPlot });
   }
 
@@ -145,7 +145,7 @@ class Body extends React.Component {
 
         <div className="Body">
           <div className="plotText">
-            <h1>{this.state.plot[this.state.room].name + " Room"}</h1>
+            <h1 id="room">{this.state.plot[this.state.room].name + " Room"}</h1>
             <h1>{this.state.plot[this.state.room].text[
               this.state.plot[this.state.room].repair ? 1 : 0
             ]}</h1>
