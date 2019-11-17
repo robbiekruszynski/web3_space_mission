@@ -1,19 +1,14 @@
 import React from "react";
-import Time from "./Time";
 
-class Hud extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div id="hud">
-        <p id="time" key={this.props.time}>{this.props.time.toPrecision(2)}</p>
-        <div id="rateDiv">
-        </div>
+function Hud(props) {
+  return (
+    <div id="hud">
+      <p id="time" key={props.time}>{props.time.toPrecision(2)}</p>
+      <div id="rateDiv">
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
 export default Hud;

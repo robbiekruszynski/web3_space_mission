@@ -31,10 +31,7 @@
 }
 
 .introStory {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
+  height: 100px;
   width: 70vw;
   margin-top: 0;
   padding-left: 50px;
@@ -91,6 +88,7 @@
   border: none;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   button {
     font-family: "Press Start 2P", cursive;
@@ -99,9 +97,6 @@
     border-radius: 12px;
     display: flex;
     justify-content: center;
-    align-content: center;
-    align-items: center;
-    text-align: center;
     width: 30vw;
     height: 35px;
     animation-iteration-count: infinite;
@@ -161,14 +156,14 @@
     justify-content: space-around;
     align-content: center;
     align-items: center;
-    height: 100vh;
-    padding-top: 50px;
-    padding-right: 300px;
-    padding-bottom: 50px;
-    padding-left: 300px;
+    // height: 100vh;
+    // padding-top: 50px;
+    // padding-right: 300px;
+    // padding-bottom: 50px;
+    // padding-left: 300px;
     button {
       border: none;
-      margin-top: -300px;
+      // margin-top: -300px;
     }
   }
 }
@@ -464,7 +459,27 @@
   font-family: "Press Start 2P", cursive;
 
   font-weight: bold;
+  border: solid 1px #424542;
+  box-shadow: 1px 1px #e7dfe7, -1px -1px #e7dfe7, 1px -1px #e7dfe7,
+    -1px 1px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b, 0 2px #424542;
+  width: 70vw;
+  // height: 300px;
+  background: #04009d;
+  background: -moz-linear-gradient(top, #04009d 0%, #06004d 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(25,25,25,0.85)),
+    color-stop(100%, rgba(12,12,12,0.85))
+  );
+  padding: 30px
   // border: 1px solid red;
+}
+
+#room {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 #prompt {
