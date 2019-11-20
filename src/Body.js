@@ -23,7 +23,8 @@ class Body extends React.Component {
       questionsOn: false,
       score: 0,
       gameOver: false,
-      enginesReady: false
+      enginesReady: false,
+      transition: ""
     };
     this.clickChoice = this.clickChoice.bind(this);
     this.questionStart = this.questionStart.bind(this);
@@ -128,8 +129,12 @@ class Body extends React.Component {
   }
 
   navigate(id) {
-    this.setState({ room: id });
-    this.setState({ answer: "" });
+    this.setState({ transition: "" }, () => {
+      setTimeout(() => this.setState({transition: "roomTransition"}), 0);
+      setTimeout(() => {
+        this.setState({ room: id });
+        this.setState({ answer: "" });}, 500);
+    });
   }
 
   turn() {
@@ -146,6 +151,7 @@ class Body extends React.Component {
           this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"
         }
       >
+        <div className={ this.state.transition }></div>
         <div className="Body">
           <div className="plotText">
             <h1 id="room">{this.state.plot[this.state.room].name + " Room"}</h1>

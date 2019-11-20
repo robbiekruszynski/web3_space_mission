@@ -424,6 +424,45 @@
   animation: $name 0.75s alternate infinite;
 }
 
+@mixin roomTransition($name,$dir) {
+  @keyframes #{$name} {
+    0% {
+      left: 0vw;
+      bottom: 0vw;
+      height: 100vh;
+      width: 100vw;
+      border: 0vw solid rgba(0,0,0,0);
+    }
+    50% {
+      height: 0vw;
+      width: 0vw;
+      border: #{$dir} solid black;
+    }
+    100% {
+      left: 0vw;
+      bottom: 0vw;
+      height: 100vh;
+      width: 100vw;
+      border: 0vw solid rgba(0,0,0,0);
+    }
+  }
+  position: absolute;
+  animation: $name 1s linear;
+}
+
+@media screen and (orientation: landscape) {
+  .roomTransition {
+    @include roomTransition(moveRoom,50vw);
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .roomTransition {
+    @include roomTransition(moveRoom,50vh);
+  }
+}
+
+
 .broken {
   background-color: red;
 }
