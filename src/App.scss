@@ -411,7 +411,7 @@
 @mixin border($name, $color) {
   @keyframes #{$name} {
     0% {
-      border: 1px solid yellow;
+      border: 1px solid teal;
       height: 10px;
       width: 10px;
     }
@@ -424,14 +424,14 @@
   animation: $name 0.75s alternate infinite;
 }
 
-@mixin roomTransition($name,$dir) {
+@mixin roomTransition($name, $dir) {
   @keyframes #{$name} {
     0% {
       left: 0vw;
       bottom: 0vw;
       height: 100vh;
       width: 100vw;
-      border: 0vw solid rgba(0,0,0,0);
+      border: 0vw solid rgba(0, 0, 0, 0);
     }
     50% {
       height: 0vw;
@@ -443,7 +443,7 @@
       bottom: 0vw;
       height: 100vh;
       width: 100vw;
-      border: 0vw solid rgba(0,0,0,0);
+      border: 0vw solid rgba(0, 0, 0, 0);
     }
   }
   position: absolute;
@@ -452,29 +452,28 @@
 
 @media screen and (orientation: landscape) {
   .roomTransition {
-    @include roomTransition(moveRoom,50vw);
+    @include roomTransition(moveRoom, 50vw);
   }
 }
 
 @media screen and (orientation: portrait) {
   .roomTransition {
-    @include roomTransition(moveRoom,50vh);
+    @include roomTransition(moveRoom, 50vh);
   }
 }
 
-
 .broken {
-  background-color: red;
+  background-color: #ff524c;
 }
 
 .current {
-  background-color: green;
+  background-color: lime;
   @include border(border1, orange);
 }
 
 .currentBroken {
-  background-color: red;
-  @include border(border1, orange);
+  background-color: rgb(214, 70, 0);
+  @include border(border1, white);
 }
 
 .fixed {
@@ -509,10 +508,10 @@
     linear,
     left top,
     left bottom,
-    color-stop(0%, rgba(25,25,25,0.85)),
-    color-stop(100%, rgba(12,12,12,0.85))
+    color-stop(0%, rgba(25, 25, 25, 0.85)),
+    color-stop(100%, rgba(12, 12, 12, 0.85))
   );
-  padding: 30px
+  padding: 30px;
   // border: 1px solid red;
 }
 
