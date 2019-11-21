@@ -5,7 +5,7 @@
 }
 
 .Splash {
-  background-image: url("./space-background.gif");
+  background-image: url("./spaceOne.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,8 +34,9 @@
   height: 100px;
   width: 70vw;
   margin-top: 0;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 50%;
+  padding-right: 50%;
+  line-height: 2;
 }
 
 @keyframes type {
@@ -178,7 +179,7 @@
   background-size: cover;
   position: fixed;
   background-repeat: no-repeat;
-  background-image: url("./pitImgBit.jpg");
+  background-image: url("./pitImg.jpg");
   background-position: center;
 }
 html {

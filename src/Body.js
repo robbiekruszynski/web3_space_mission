@@ -131,10 +131,11 @@ class Body extends React.Component {
 
   navigate(id) {
     this.setState({ transition: "" }, () => {
-      setTimeout(() => this.setState({transition: "roomTransition"}), 0);
+      setTimeout(() => this.setState({ transition: "roomTransition" }), 0);
       setTimeout(() => {
         this.setState({ room: id });
-        this.setState({ answer: "" });}, 500);
+        this.setState({ answer: "" });
+      }, 500);
     });
   }
 
@@ -152,7 +153,7 @@ class Body extends React.Component {
           this.state.plot[this.state.room].name.split(" ")[0] + " gameScreen"
         }
       >
-        <div className={ this.state.transition }></div>
+        <div className={this.state.transition}></div>
         <div className="Body">
           <div className="plotText">
             <h1 id="room">{this.state.plot[this.state.room].name + " Room"}</h1>
