@@ -2,7 +2,7 @@ export const plot = [
   {
     name: "Piloting",
     text: [
-      "You've spent countless hours in the cockpit of this ship, but the controls are completely dead. If you fix the rest of the ship, you could start the engines and return home.",
+      "You've spent countless hours in the cockpit of this ship, but the controls are completely dead. If you manage to fix the ship, hopefully the engines will kick on and you can return home.",
       "You start the launch sequence, and the motors thrum back to full power. The control panel fades to life, and your home coordinates are plotted successfully. You reflect wistfully on the efforts it's taken to get here, and the efforts to come."
     ],
     connections: [

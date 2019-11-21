@@ -27,16 +27,15 @@
   font-family: "Press Start 2P", cursive;
   white-space: nowrap;
   overflow: hidden;
-  animation: type 4s steps(60, end);
+  animation: type 2s steps(60, end);
 }
 
 .introStory {
   height: 100px;
   width: 70vw;
   margin-top: 0;
-  padding-left: 50%;
-  padding-right: 50%;
-  line-height: 2;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 @keyframes type {
@@ -86,10 +85,12 @@
 }
 
 .button {
+  // border: 5px solid red;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  // border: 5px solid red;
 
   button {
     font-family: "Press Start 2P", cursive;
@@ -174,16 +175,12 @@
 /////////////////////////////////////////////////////////////////////////////
 
 .Piloting {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-size: cover;
-  position: fixed;
   background-repeat: no-repeat;
   background-image: url("./pitImg.jpg");
   background-position: center;
-}
-html {
-  height: 100%;
 }
 
 .Engine {
@@ -316,7 +313,6 @@ html {
   }
 }
 .Body * {
-  // background-color: #04009d;
   color: #eff1ff;
   text-shadow: 2px 2px #212421, 1px 1px #212021;
   font-family: Verdana, sans-serif;
@@ -339,6 +335,7 @@ html {
 /////////////////////////////////////////////////////////////////////////////
 
 .mapDiv {
+  border: 1px solid purple;
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -417,7 +414,7 @@ html {
 @mixin border($name, $color) {
   @keyframes #{$name} {
     0% {
-      border: 1px solid teal;
+      border: 1px solid lime;
       height: 10px;
       width: 10px;
     }
@@ -427,7 +424,7 @@ html {
       width: 12px;
     }
   }
-  animation: $name 0.75s alternate infinite;
+  animation: $name 0.45s alternate infinite;
 }
 
 @mixin roomTransition($name, $dir) {
@@ -469,21 +466,21 @@ html {
 }
 
 .broken {
-  background-color: #ff524c;
+  background-color: red;
 }
 
 .current {
-  background-color: lime;
+  background-color: green;
   @include border(border1, orange);
 }
 
 .currentBroken {
-  background-color: rgb(214, 70, 0);
-  @include border(border1, white);
+  background-color: red;
+  @include border(border1, teal);
 }
 
 .fixed {
-  background-color: lime;
+  background-color: green;
 }
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -514,7 +511,7 @@ html {
     linear,
     left top,
     left bottom,
-    color-stop(0%, #04009d),
+    color-stop(0%, rgba(25, 25, 25, 0.85)),
     color-stop(100%, rgba(12, 12, 12, 0.85))
   );
   padding: 30px;
